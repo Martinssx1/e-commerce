@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e-commerce</title>
+    <link rel="stylesheet" href="commerce.css" />
+  </head>
+  <body>
+    <div class="navigation">
+      <div class="dropdown">
+        <ul class="dropdownstuff">
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="ronny">
+        <img src="images/menu.svg" alt="" class="menu" />
+        <img src="images/logo.svg" alt="" class="logo" />
+      </div>
+      <div class="navfirstpart">
+        <ul class="navlist">
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+
+        <div class="navlastpart">
+          <div class="cartnigga">
+            <img src="images/icon-cart.svg" alt="" class="cartlogo" />
+            <div class="cartnum">5</div>
+          </div>
+          <img src="images/image-avatar.png" alt="" class="profilepic" />
+        </div>
+      </div>
+      <div class="cartbox">
+        <div class="pcart">cart</div>
+        <div class="emptycart">Your Cart is Empty.</div>
+        <div class="whole">
+          <div class="insidecartbox">
+            <img
+              src="images/image-product-1-thumbnail.jpg"
+              alt=""
+              class="insidecartboximg"
+            />
+            <div class="ss">
+              Fall Limited Edition Sneakers $<span class="price">125.00</span>
+              x<span class="multiplynum"></span> $<span class="total"
+                >375.00
+              </span>
+              <img src="images/icon-delete.svg" alt="" class="icon-delete" />
+            </div>
+          </div>
+          <div class="checkout">Checkout</div>
+        </div>
+      </div>
+    </div>
+    <div class="fullpage">
+      <div class="firstdiv">
+        <div class="mainimg">
+          <img src="images/image-product-1.jpg" alt="" class="bigimage" />
+          <img src="images/image-product-2.jpg" alt="" class="bigimage2" />
+          <img src="images/image-product-3.jpg" alt="" class="bigimage3" />
+          <img src="images/image-product-4.jpg" alt="" class="bigimage4" />
+        </div>
+        <div class="smallimg">
+          <img
+            src="images/image-product-1-thumbnail.jpg"
+            alt=""
+            class="clickimg1"
+          />
+          <img
+            src="images/image-product-2-thumbnail.jpg"
+            alt=""
+            class="clickimg2"
+          />
+          <img
+            src="images/image-product-3-thumbnail.jpg"
+            alt=""
+            class="clickimg3"
+          />
+          <img
+            src="images/image-product-4-thumbnail.jpg"
+            alt=""
+            class="clickimg4"
+          />
+        </div>
+      </div>
+      <div class="seconddiv">
+        <header>SNEAKER COMPANY</header>
+        <div class="boldheader">Fall Limited Edition Sneakers</div>
+        <div class="normaltext">
+          These low-profile Sneakers are your perfect casual wear
+          companion.Featuring a durable rubber outer sole, they'll withstand
+          everything the weather can offer.
+        </div>
+        <div class="prices">
+          $125.00
+          <div class="percentage">50%</div>
+        </div>
+        <div class="cancelprice">$250.00</div>
+        <div class="cartquantitywrapper">
+          <div class="numbers">
+            <div class="minus">
+              <img src="images/icon-minus.svg" alt="" class="class-minus" />
+            </div>
+            <div class="num"></div>
+            <div class="minus">
+              <img src="images/icon-plus.svg" alt="" class="class-plus" />
+            </div>
+          </div>
+          <div class="addtocart">
+            <img src="images/icon-cart.svg" alt="" class="cartimg" />Add to cart
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function menu() {
+        const menu = document.querySelector(".menu");
+        const dropdown = document.querySelector(".dropdown");
+        menu.addEventListener("click", () => {
+          if (dropdown.style.display === "none") {
+            dropdown.style.display = "flex";
+          } else {
+            dropdown.style.display = "none";
+          }
+        });
+      }
+      menu();
+      function imgclick() {
+        const mainimg = document.querySelector(".mainimg");
+        const img1 = document.querySelector(".clickimg1");
+        const img2 = document.querySelector(".clickimg2");
+        const img3 = document.querySelector(".clickimg3");
+        const img4 = document.querySelector(".clickimg4");
+        const bigimage2 = document.querySelector(".bigimage2");
+        const bigimage3 = document.querySelector(".bigimage3");
+        const bigimage4 = document.querySelector(".bigimage4");
+        const bigimage = document.querySelector(".bigimage");
+        img1.addEventListener("click", () => {
+          bigimage.style.display = "flex";
+          bigimage3.style.display = "none";
+          bigimage4.style.display = "none";
+          bigimage2.style.display = "none";
+        });
+        img2.addEventListener("click", () => {
+          bigimage.style.display = "none";
+          bigimage3.style.display = "none";
+          bigimage4.style.display = "none";
+          bigimage2.style.display = "flex";
+        });
+        img3.addEventListener("click", () => {
+          bigimage.style.display = "none";
+          bigimage3.style.display = "flex";
+          bigimage4.style.display = "none";
+          bigimage2.style.display = "none";
+        });
+        img4.addEventListener("click", () => {
+          bigimage.style.display = "none";
+          bigimage3.style.display = "none";
+          bigimage4.style.display = "flex";
+          bigimage2.style.display = "none";
+        });
+      }
+      imgclick();
+      function clickcart() {
+        const cartlogo = document.querySelector(".cartlogo");
+        const cartbox = document.querySelector(".cartbox");
+        cartlogo.addEventListener("click", () => {
+          if (cartbox.style.display === "none") {
+            cartbox.style.display = "flex";
+          } else {
+            cartbox.style.display = "none";
+          }
+        });
+      }
+      clickcart();
+
+      function cartidentity(count) {
+        const whole = document.querySelector(".whole");
+        const emptycart = document.querySelector(".emptycart");
+        const cartbox = document.querySelector(".cartbox");
+        const cartnum = document.querySelector(".cartnum");
+        if (count === 0) {
+          cartbox.style.display = "none";
+          cartnum.style.display = "none";
+          whole.style.display = "none";
+          emptycart.style.display = "flex";
+        } else {
+          cartbox.style.display = "flex";
+          cartnum.style.display = "flex";
+          whole.style.display = "block";
+          emptycart.style.display = "none";
+        }
+      }
+      function updateCart(count) {
+        const price = parseFloat(document.querySelector(".price").innerText);
+        const multiplyNum = document.querySelector(".multiplynum");
+        const total = document.querySelector(".total");
+        const cartBadge = document.querySelector(".cartnum");
+
+        multiplyNum.innerText = count;
+        total.innerText = (price * count).toFixed(2);
+        cartBadge.innerText = count;
+      }
+      function cartquantity() {
+        let cart = document.querySelector(".num");
+        const minus = document.querySelector(".class-minus");
+        const plus = document.querySelector(".class-plus");
+        const addcart = document.querySelector(".addtocart");
+        const icondelete = document.querySelector(".icon-delete");
+        let count = 0;
+        cart.innerHTML = count;
+        plus.addEventListener("click", () => {
+          count++;
+          cart.innerHTML = count;
+          updateCart(count);
+          cartidentity(count);
+        });
+        minus.addEventListener("click", () => {
+          if (count > 0) {
+            count--;
+            cart.innerHTML = count;
+            updateCart(count);
+            cartidentity(count);
+          }
+        });
+        addcart.addEventListener("click", () => {
+          count++;
+          cart.innerHTML = count;
+          if (count > 0) {
+            updateCart(count);
+            cartidentity(count);
+          }
+        });
+        icondelete.addEventListener("click", () => {
+          count = 0;
+          cart.innerHTML = count;
+          cartidentity(count);
+          updateCart(count);
+        });
+      }
+      cartquantity();
+    </script>
+  </body>
+</html>
